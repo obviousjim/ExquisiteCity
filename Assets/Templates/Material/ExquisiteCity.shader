@@ -1,4 +1,4 @@
-Shader "StandardCullOff"
+Shader "ExquisiteCity"
 {
 	Properties
 	{
