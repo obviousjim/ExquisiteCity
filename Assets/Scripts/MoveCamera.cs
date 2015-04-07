@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveScript : MonoBehaviour {
+public class MoveCamera : MonoBehaviour {
 	//Variables
 	public float speed = 6.0F;
 	public float jumpSpeed = 8.0F; 
