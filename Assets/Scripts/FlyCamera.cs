@@ -22,7 +22,9 @@ public class FlyCamera : MonoBehaviour {
 	private float totalRun= 1.0f;
 	
 	void Update () {
-		
+
+		CharacterController controller = GetComponent<CharacterController>();
+
 		// Mouse input.
 		lastMouse = Input.mousePosition - lastMouse;
 		lastMouse = new Vector3(-lastMouse.y * camSens, lastMouse.x * camSens, 0 );
@@ -32,6 +34,7 @@ public class FlyCamera : MonoBehaviour {
 		
 		// Keyboard commands.
 		Vector3 p = getDirection();
+		p = transform.TransformDirection(p);
 		if (Input.GetKey (KeyCode.LeftShift)){
 			totalRun += Time.deltaTime;
 			p  = p * totalRun * shiftAdd;
@@ -47,13 +50,17 @@ public class FlyCamera : MonoBehaviour {
 		p = p * Time.deltaTime;
 		Vector3 newPosition = transform.position;
 		if (Input.GetKey(KeyCode.V)){ //If player wants to move on X and Z axis only
-			transform.Translate(p);
+			//transform.Translate(p);
+			controller.Move(p);
 			newPosition.x = transform.position.x;
 			newPosition.z = transform.position.z;
 			transform.position = newPosition;
 		}
 		else{
-			transform.Translate(p);
+			//transform.Translate(p);
+
+			//Making the character move
+			controller.Move(p);
 		}
 		
 	}
