@@ -129,7 +129,9 @@ Shader "ExquisiteCity"
 			Tags { "LightMode" = "ShadowCaster" }
 			
 			ZWrite On ZTest LEqual
-
+			
+			Cull Off
+			
 			CGPROGRAM
 			#pragma target 3.0
 			// TEMPORARY: GLES2.0 temporarily disabled to prevent errors spam on devices without textureCubeLodEXT
