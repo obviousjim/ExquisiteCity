@@ -19,4 +19,10 @@
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+
 Assets/Templates/Material/Thumbs.db
+Assets/Templates/Material/Thumbs.db.meta
+.DS_Store
+/Prefabs/*.meta
+/Prefabs/*.prefab
+/Prefabs/_COMPOSITES/
